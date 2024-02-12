@@ -2,18 +2,18 @@
 ;Assembly language arrays
 ;I am going to use some kind of loop to print out myArray.
 
-includelib irvine32.lib
-.386
-.model flat, stdcall
-.stack 4096
-ExitProcess proto, dwExitCode:dword
+INCLUDE Irvine32.inc
 
 .data
 
+myNum SDWORD 1
+
 .code
+main PROC
 
-main proc
+call Crlf
+call WaitMsg
+exit
 
-invoke ExitProcess, 0
-main endp
-end main
+main ENDP
+END main
