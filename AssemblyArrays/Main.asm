@@ -10,10 +10,14 @@ myNum SDWORD 1
 
 .code
 main PROC
+again:
 
-call Crlf
-call WaitMsg
-exit
+
+done:
+
+	call Crlf
+	call WaitMsg
+	exit
 
 main ENDP
 END main
