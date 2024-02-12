@@ -1,5 +1,6 @@
 ;Tanner Bebb
 ;Assembly language arrays
+;I am going to use some kind of loop to print out myArray.
 
 includelib irvine32.lib
 .386
@@ -9,13 +10,9 @@ ExitProcess proto, dwExitCode:dword
 
 .data
 
-myArray WORD 1, 2, 3, 4, 5			;Created myArray
-
 .code
 
 main proc
-
-mov esi, OFFSET myArray + 4			;What does this do?
 
 invoke ExitProcess, 0
 main endp
