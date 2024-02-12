@@ -8,6 +8,7 @@ ExitProcess proto, dwExitCode:dwords
 
 .data
 
+myArray DW 1, 2, 3, 4, 5			;Created myArray
 
 .code
 
