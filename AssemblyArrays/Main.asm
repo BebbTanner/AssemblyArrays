@@ -6,13 +6,14 @@ INCLUDE Irvine32.inc
 
 .data
 
-myNum SDWORD 1
+myNum SDWORD ?
 
 .code
 main PROC
+	mov myNum, 1		;Storing the value of 1 into the myNum variable
 again:
-
-
+	cmp myNum, 10		;This will compare the most recent value in myNum to the value 10
+	jg done				;If the value in myNum is greater than 10, It will stop the loop.
 done:
 
 	call Crlf
