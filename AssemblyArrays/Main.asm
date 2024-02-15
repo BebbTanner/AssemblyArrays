@@ -29,16 +29,18 @@ main PROC
 
 
 ;For loop that prints out powers of 2.
-mov myNum2, 0			;Stores the value of 0 into myNum2
+mov myNum2, 0					;Stores the value of 0 into myNum2
 again2:
-	cmp myNum2, 8		;Compares myNum2 to the value of 8.
-	jg done				;If myNum2 is greater than 8 it will jump to the done command.
-	mov eax, myNum2		;Stores myNum2 into the eax register.
-	call WriteInt		;Writes the current integer stored in myNum2.
-	mov al, ' '			;Stores the space character into the al register.
-	call WriteChar		;Writes the character that is stored in the al register.
-	inc myNum2			;Increments the value of myNum2.
-	jmp again2			;Runs the loop again until the starting conditions are met.
+	cmp myNum2, 8				;Compares myNum2 to the value of 8.
+	jg done						;If myNum2 is greater than 8 it will jump to the done command.
+	mov eax, 1					;Move the value of 1 into the eax register.
+	mov cl, BYTE PTR myNum2		;Move myNum2 into the cl register. This is used for the shift command.
+	shl eax, cl					;This will Multiply eax by cl? Using powers of 2.
+	call WriteInt				;Writes the current integer stored in myNum2.
+	mov al, ' '					;Stores the space character into the al register.
+	call WriteChar				;Writes the character that is stored in the al register.
+	inc myNum2					;Increments the value of myNum2.
+	jmp again2					;Runs the loop again until the starting conditions are met.
 
 done:
 	call Crlf
